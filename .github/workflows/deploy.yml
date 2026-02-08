@@ -16,7 +16,7 @@ jobs:
         run: test -f index.html
 
       - name: Validate CSS exists
-        run: test -f styles.css
+        run: test -f style.css
       
       - name: Install HTML validator
         run: npm install - g htmlhint
