@@ -18,11 +18,8 @@ jobs:
       - name: Validate CSS exists
         run: test -f style.css
       
-      - name: Install HTML validator
-        run: npm install - g htmlhint
-      
-      - name: Run HTML check
-        run: htmlhint index.html
+      - name: Validate HTML syntax
+        run: npx htmlhint index.html
 
       - name: Deploy to Github Pages
         uses: peaceiris/actions-gh-pages@v4
