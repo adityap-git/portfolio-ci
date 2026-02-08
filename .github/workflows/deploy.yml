@@ -15,9 +15,17 @@ jobs:
       - name: Validate HTML exists
         run: test -f index.html
 
+      - name: Validate CSS exists
+        run: test -f styles.css
+      
+      - name: Install HTML validator
+        run: npm install - g htmlhint
+      
+      - name: Run HTML check
+        run: htmlhint index.html
+
       - name: Deploy to Github Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .
-          
